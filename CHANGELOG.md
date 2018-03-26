@@ -25,3 +25,15 @@
 
 ### Added
 * Virtual env changed to python3 instead of python2. This solved the linting problem
+
+## 2018-03-22
+
+### Added
+* Random lane for created zombie
+
+## 2018-03-26
+
+### Added
+* Lane-wise game-play in A1
+* Lane position bug fixed
+* Game over/Victory screen

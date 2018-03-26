@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/home/sofia/python/PlantsvsZombies/bin/python3",
+    "python.venvPath": "/home/sofia/python/PlantsvsZombies/",
+    "python.linting.pylintPath": "/home/sofia/python/PlantsvsZombies/bin/pylint",
+}
