@@ -11,13 +11,29 @@ class Actor:
     def __init__(self):
         self.Health = Properties.Health()
         self.Position = Properties.Position()
-
+        self.stillHangingOn = 0
         #grfx
         self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/ozzy.jpg"#"rsz_ozzy.jpg"
         self.width = 70
         #with Image.open(self.grfx) as img:
         #    self.width = img.size[0]
-    
+
+    def __lt__(self,other):
+        return self.Position < other.Position
+    def __le__(self,other):
+        return self.Position <= other.Position
+    def __eq__(self,other):
+        return self.Position == other.Position
+    def __ne__(self,other):
+        return self.Position != other.Position
+    def __gt__(self,other):
+        return self.Position > other.Position
+    def __ge__(self,other):
+        return self.Position >= other.Position
+
+
+
+
     def getPosition(self):
         """
         Function for retrieving position
@@ -37,8 +53,12 @@ class Actor:
 
     def isDead(self):
         """
-        Checks if dead
+        Use if isDying.
 
         :return True if dead, False otherwise
         """
+        self.stillHangingOn -= 1
+        return self.stillHangingOn <= 0
+    
+    def isDying(self):
         return self.Health.hitpoints <= 0

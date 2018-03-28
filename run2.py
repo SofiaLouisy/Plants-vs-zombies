@@ -76,7 +76,7 @@ while True:
     actorsGenerator = game.getActors()
 
     for actor in actorsGenerator:
-        screen.blit(pygame.image.load(actor.grfx),actor.position())
+        screen.blit(pygame.image.load(actor.grfx),actor.getPosition())
 
     #makes everything we just drew visible
     #this strategy makes sure we only see completed stuff

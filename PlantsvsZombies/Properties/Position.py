@@ -12,9 +12,18 @@ class Position:
         self.x = Board.width+40
         self.y = Board.height//2
     
+    def __lt__(self,other):
+        return self.x < other.x
+    def __le__(self,other):
+        return self.x <= other.x
     def __eq__(self,other):
-        return self.x == other.x and self.y == other.y
-    
+        return self.x == other.x and self.y == self.y
+    def __ne__(self,other):
+        return self.x != other.x and self.y != self.y
+    def __gt__(self,other):
+        return self.x > other.x
+    def __ge__(self,other):
+        return self.x >= other.x
     def setPosition(self,pos):
         """
         Sets the position

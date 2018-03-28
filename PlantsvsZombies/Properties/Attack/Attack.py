@@ -7,13 +7,12 @@ Module that handles attack
 
 class Attack:
     def __init__(self):
-        self.damage = 10
+        self.damage = 15
     
-    def attack(self, other):
+    def attack(self):
         '''
         Target looses health
 
-        :param other the target as an Actor object
-        :return True if attack, False if charging
+        :return damage the attack damage
         '''
-        other.Health.looseHealth(self.damage)
+        return self.damage

@@ -43,3 +43,10 @@
 ###
 * Documentation (comments) added to some modules with python3 -m pydoc -w filename. It is folder sensitive, which makes it non-flexible.
 * ChargedAttack submodule to Attack was added.
+
+## 2018-03-28
+
+### Added
+* Plant creates pea when attack
+* Dying graphics
+* runtime

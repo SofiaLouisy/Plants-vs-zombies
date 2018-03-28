@@ -1,16 +1,16 @@
-from Actor.Zombie.Zombie import Zombie
+from PlantsvsZombies.Actor.Zombie.Zombie import Zombie
 #from Actor.ActorProperties.Position import Position
 zombie = Zombie()
-print("zombie position: " + str(zombie.position()))
+print("zombie position: " + str(zombie.getPosition()))
 print("zombie moved position: " + str(zombie.move()))
 #print(Position())
-import Properties
+import PlantsvsZombies.Properties as Properties
 position = Properties.Position()
 print(position)
-from Actor.Plant.Plant import *
+from PlantsvsZombies.Actor.Plant.Plant import *
 print(Plant())
 
-import Actor
+import PlantsvsZombies.Actor as Actor
 print(Actor.Zombie())
 
 plant = Actor.Plant()
@@ -23,5 +23,9 @@ print("Plant: " + str(plant.Health.hitpoints))
 print("Zombie: " + str(zombie.Health.hitpoints))
 print("Plant: " + str(plant.isDead()))
 
-from Object.Object import *
-print(Object())
+from PlantsvsZombies.Object.Projectile.Pea.Pea import Pea as Pea
+pea = Pea()
+pea.Position.setPosition((0,0))
+print(plant.getPosition())
+attackPea = plant.getAttack()
+print(attackPea.getPosition())

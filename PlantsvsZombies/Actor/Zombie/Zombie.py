@@ -14,7 +14,8 @@ class Zombie(Actor):
         self.Movement = Properties.Movement()
         self.Attack = Properties.ChargedAttack()
         self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_ozzy.gif"
-    
+        self.stillHangingOn = 40
+
     def move(self):
         """
         Moves the zombie horizontally from right to left
@@ -29,7 +30,13 @@ class Zombie(Actor):
         """
         Tries to attack target. Changes graphics accordingly
         """
-        if(self.Attack.attack(other)):
+        damage = self.Attack.attack()
+        if(damage): 
             self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_ozzy_tilt.gif"
+            other.Health.looseHealth(damage)
         else:
             self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_ozzy_halvtilt.gif"
+    
+    def isDead(self):
+        self.grfx =  "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_dead_ozzy.gif"
+        return Actor.isDead(self)
