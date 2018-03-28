@@ -37,3 +37,9 @@
 * Lane-wise game-play in A1
 * Lane position bug fixed
 * Game over/Victory screen
+
+## 2018-03-27
+
+###
+* Documentation (comments) added to some modules with python3 -m pydoc -w filename. It is folder sensitive, which makes it non-flexible.
+* ChargedAttack submodule to Attack was added.
