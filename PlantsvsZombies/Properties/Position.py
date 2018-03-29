@@ -9,7 +9,7 @@ from PlantsvsZombies.Board.Board import *
 
 class Position:
     def __init__(self):
-        self.x = Board.width+40
+        self.x = Board.width+35
         self.y = Board.height//2
     
     def __lt__(self,other):

@@ -11,4 +11,4 @@ class FastMovement(Movement):
     
     def __init__(self):
         Movement.__init__(self)
-        self.speed = 10
+        self.speed = 5

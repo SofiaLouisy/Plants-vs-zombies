@@ -12,7 +12,7 @@ class myObject:
         self.grfx = "Actor/Zombie/ozzy.jpg"#"rsz_ozzy.jpg"
         self.width = 36
         self.dying = False
-        self.stillHangingOn = 6
+        self.stillHangingOn = 15
     
     def getPosition(self):
         """

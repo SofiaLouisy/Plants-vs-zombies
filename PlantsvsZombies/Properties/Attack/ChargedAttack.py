@@ -9,7 +9,7 @@ from PlantsvsZombies.Properties.Attack.Attack import *
 class ChargedAttack(Attack):
     def __init__(self):
         Attack.__init__(self)
-        self.chargeTime = 4
+        self.chargeTime = 100
         self.charging = 0
         self.damage = 10
     

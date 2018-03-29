@@ -15,8 +15,8 @@ class Plant(Actor):
         #grfx
         self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Plant/rsz_plant.gif"
         self.width = 36
-        self.chargeTime = 20
-        self.charging = 20
+        self.chargeTime = 100
+        self.charging = self.chargeTime
     
     def setPosition(self,pos):
         """
@@ -31,7 +31,10 @@ class Plant(Actor):
             self.charging = self.chargeTime
             pea = Pea()
             pea.Position.setPosition(self.getPosition())
+            self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Plant/rsz_plant_rotated.gif"
             return pea
         else:
             self.charging -= 1
+            if self.charging <= self.chargeTime-10:
+                self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Plant/rsz_plant.gif"
             return None

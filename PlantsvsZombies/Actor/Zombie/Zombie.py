@@ -14,7 +14,7 @@ class Zombie(Actor):
         self.Movement = Properties.Movement()
         self.Attack = Properties.ChargedAttack()
         self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_ozzy.gif"
-        self.stillHangingOn = 40
+        self.stillHangingOn = 200
 
     def move(self):
         """
@@ -34,8 +34,9 @@ class Zombie(Actor):
         if(damage): 
             self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_ozzy_tilt.gif"
             other.Health.looseHealth(damage)
-        else:
-            self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_ozzy_halvtilt.gif"
+        elif self.Attack.charging <= self.Attack.chargeTime-10:
+            self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_ozzy.gif"
+            #self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_ozzy_halvtilt.gif"
     
     def isDead(self):
         self.grfx =  "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_dead_ozzy.gif"

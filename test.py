@@ -28,4 +28,9 @@ pea = Pea()
 pea.Position.setPosition((0,0))
 print(plant.getPosition())
 attackPea = plant.getAttack()
-print(attackPea.getPosition())
+#print(attackPea.getPosition())
+
+
+from PlantsvsZombies.AdventureGames.RunTime import *
+runTime = RunTime()
+print(runTime)

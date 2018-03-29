@@ -5,6 +5,7 @@ Module to run an adventure game of Plants vs Zombies
 @company Stickybit AB
 '''
 from PlantsvsZombies.Board.Board import *
+from PlantsvsZombies.AdventureGames.RunTime import *
 import PlantsvsZombies.Actor as Actor
 from random import randint
 from PlantsvsZombies.Object.Projectile.Pea.Pea import Pea as Pea
@@ -13,10 +14,8 @@ class A1:
     def __init__(self):
         
         self.Board = Board()
+        self.RunTime = RunTime()
         self.Board.setLanes(2)
-        self.nrOfZombies = 3
-        self.runTime = 0
-        self.gameTime = 2000
         print("GridPos: "+ str(self.Board.getPosition(0,1)))
         print("lanepositions: " + str(self.Board.getLanePositions()))
 
@@ -31,21 +30,16 @@ class A1:
         Function to get all game objects.
         :yield one object at a time
         """
-        for zombies in self.zombies:
-            for zombie in zombies:
-                yield zombie
-        
-        for plants in self.plants:
-            for plant in plants:
+        for i in range(self.Board.lanes):
+            
+            for plant in reversed(self.plants[i]):
                 yield plant
-
-        for objects in self.objects:
-            for myObject in objects:
+            for zombie in reversed(self.zombies[i]):
+                yield zombie
+            for myObject in reversed(self.objects[i]):
                 yield myObject
-        
-        for deads in self.dyingObjects:
-            for dead in deads:
-                yield dead
+            for dying in reversed(self.dyingObjects[i]):
+                yield dying
 
     def run(self):
         """
@@ -55,16 +49,10 @@ class A1:
         """
 
         gameWon = False
-        if self.runTime >= 2900:
+        self.RunTime.run()
+        if self.RunTime.isFinished():
             gameWon = True
-
-        if self.runTime == 10:
-            self.addZombie()
-        
-        if self.runTime == 20:
-            self.addZombie()
-        
-        if self.runTime == 30:
+        if self.RunTime.isEntering():
             self.addZombie()
 
         #Loop through lanes
@@ -125,7 +113,6 @@ class A1:
         if gameWon:
             return "WON"
         else:
-            self.runTime +=1
             return "RUNNING"
 
     def initiate_zombies(self):

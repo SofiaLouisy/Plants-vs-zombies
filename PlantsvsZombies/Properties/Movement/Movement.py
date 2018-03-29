@@ -7,7 +7,7 @@ Module for movement.
 
 class Movement:
     def __init__(self):
-        self.speed = 5
+        self.speed = 1/3
     
     def move(self):
         """
