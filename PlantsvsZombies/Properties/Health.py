@@ -4,7 +4,6 @@ Module for health property
 @author Sofia Louisy
 @company Stickybit AB
 """
-
 class Health:
     def __init__(self):
         self.hitpoints = 100
@@ -18,5 +17,3 @@ class Health:
         """
         self.hitpoints -= damage
         return self.hitpoints
-
-    

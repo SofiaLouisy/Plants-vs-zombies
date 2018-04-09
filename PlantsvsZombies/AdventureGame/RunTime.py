@@ -21,7 +21,6 @@ class RunTime():
         for i in range (2):
             self.enterings.add(current_time +100*i)
         
-        print(self.enterings)
         
 
     def addWave(self,time):

@@ -13,11 +13,7 @@ class Actor:
         self.Position = Properties.Position()
         self.stillHangingOn = 0
         #grfx
-<<<<<<< HEAD
         self.grfx = "PlantsvsZombies/Actor/dead_ozzy.gif"#"rsz_ozzy.jpg"
-=======
-        self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/ozzy.jpg"#"rsz_ozzy.jpg"
->>>>>>> c00767c5558b09582b51b721624a025824fd94fc
         self.width = 70
         #with Image.open(self.grfx) as img:
         #    self.width = img.size[0]
@@ -35,9 +31,6 @@ class Actor:
     def __ge__(self,other):
         return self.Position >= other.Position
 
-
-
-
     def getPosition(self):
         """
         Function for retrieving position
@@ -53,15 +46,11 @@ class Actor:
         :param other The other actor
         :return True if blocked by other, False otherwise
         """
-<<<<<<< HEAD
-        if type(other) == type(self):
+        if Actor in other.__bases__:
             return other.getPosition()[0]+other.width//2 >= self.getPosition()[0]-self.width//2
         else:
             raise TypeError
             return -1
-=======
-        return other.getPosition()[0]+other.width//2 >= self.getPosition()[0]-self.width//2
->>>>>>> c00767c5558b09582b51b721624a025824fd94fc
 
     def isDead(self):
         """

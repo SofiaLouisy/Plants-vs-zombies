@@ -9,6 +9,8 @@ from PlantsvsZombies.Actor.Actor import Actor
 from PlantsvsZombies.Object.Projectile.Pea.Pea import Pea as Pea
 
 class Plant(Actor):
+    __bases__ = (Actor,)
+
     def __init__(self):
         Actor.__init__(self)
         self.Position.x = 100

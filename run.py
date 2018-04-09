@@ -1,20 +1,24 @@
-from PlantsvsZombies.Board.Board import Board
-from PlantsvsZombies.AdventureGames.A1 import *
-import PlantsvsZombies.Actor as Actor
+#!/usr/bin/env python3
+
+#from PlantsvsZombies.Board.Board import Board
+#from PlantsvsZombies.AdventureGames.A1 import *
+#import PlantsvsZombies.Actor as Actor
 import pygame
 import sys
+import PlantsvsZombies
 
 #Initialize all internal modules
 pygame.init()
 
-size = width, height = Board.size
+size = width, height = PlantsvsZombies.Board.Board.size
+#size = width, height = Board.size
 
 #Inititing zombie
-game = A1()
+game = PlantsvsZombies.AdventureGame.A1()
 
 #Setting background
 green = 100,255,100
-background_img = pygame.image.load(Board.grfx)
+background_img = pygame.image.load(PlantsvsZombies.Board.Board.grfx)
 
 #Create surface object (represents the displayed graphics)
 screen = pygame.display.set_mode(size)

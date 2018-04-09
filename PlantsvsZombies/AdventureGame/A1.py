@@ -5,7 +5,7 @@ Module to run an adventure game of Plants vs Zombies
 @company Stickybit AB
 '''
 from PlantsvsZombies.Board.Board import *
-from PlantsvsZombies.AdventureGames.RunTime import *
+from PlantsvsZombies.AdventureGame.RunTime import *
 import PlantsvsZombies.Actor as Actor
 from random import randint
 from PlantsvsZombies.Object.Projectile.Pea.Pea import Pea as Pea
@@ -16,8 +16,6 @@ class A1:
         self.Board = Board()
         self.RunTime = RunTime()
         self.Board.setLanes(2)
-        print("GridPos: "+ str(self.Board.getPosition(0,1)))
-        print("lanepositions: " + str(self.Board.getLanePositions()))
 
         self.initiate_zombies()
         self.initiate_plants()
