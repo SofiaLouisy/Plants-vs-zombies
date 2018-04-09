@@ -7,3 +7,4 @@
 * Add events so that the player plant plants
 * have a super graphicObject that has object and actors
 * get some order in the runTime. When to add zombies
+* method for graphic animation

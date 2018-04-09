@@ -9,7 +9,6 @@ from PlantsvsZombies.Actor.Actor import *
 import PlantsvsZombies.Properties
 
 class Zombie(Actor):
-    __bases__ = (Actor,)
     
     def __init__(self):
         Actor.__init__(self)

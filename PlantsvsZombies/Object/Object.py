@@ -9,14 +9,14 @@ import PlantsvsZombies.Properties as Properties
 class myObject:
     def __init__(self):
         self.Position = Properties.Position()
-        self.grfx = "Actor/Zombie/ozzy.jpg"#"rsz_ozzy.jpg"
+        self.grfx = "PlantsvsZombies/Actor/Zombie/rsz_ozzy.gif"#"rsz_ozzy.jpg"
         self.width = 36
         self.dying = False
         self.stillHangingOn = 15
 
     @staticmethod
     def getInstance():
-        return myObject()
+        return __class__()
     
     def getPosition(self):
         """

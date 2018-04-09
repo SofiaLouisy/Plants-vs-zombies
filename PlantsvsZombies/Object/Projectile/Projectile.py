@@ -1,6 +1,11 @@
 from PlantsvsZombies.Object.Object import *
 
 class Projectile(myObject):
+    
+    @staticmethod
+    def getInstance():
+        return __class__()
+        
     def __init__(self):
         myObject.__init__(self)
         self.Movement = Properties.FastMovement()

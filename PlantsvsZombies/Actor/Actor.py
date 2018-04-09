@@ -46,7 +46,7 @@ class Actor:
         :param other The other actor
         :return True if blocked by other, False otherwise
         """
-        if Actor in other.__bases__:
+        if issubclass(other.__class__,Actor):
             return other.getPosition()[0]+other.width//2 >= self.getPosition()[0]-self.width//2
         else:
             raise TypeError
