@@ -13,10 +13,13 @@ class myObject:
         self.width = 36
         self.dying = False
         self.stillHangingOn = 15
+<<<<<<< HEAD
 
     @staticmethod
     def getInstance():
         return myObject()
+=======
+>>>>>>> c00767c5558b09582b51b721624a025824fd94fc
     
     def getPosition(self):
         """

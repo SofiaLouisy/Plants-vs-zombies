@@ -13,7 +13,11 @@ class Zombie(Actor):
         Actor.__init__(self)
         self.Movement = Properties.Movement()
         self.Attack = Properties.ChargedAttack()
+<<<<<<< HEAD
         self.grfx = "PlantsvsZombies/Actor/Zombie/rsz_ozzy.gif"
+=======
+        self.grfx = "/home/sofia/python/PlantsvsZombies/PlantsvsZombies/Actor/Zombie/rsz_ozzy.gif"
+>>>>>>> c00767c5558b09582b51b721624a025824fd94fc
         self.stillHangingOn = 200
 
     def move(self):
