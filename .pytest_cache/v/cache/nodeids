@@ -1,0 +1,6 @@
+[
+  "PlantsvsZombies/Actor/unittest.py::test_get_position",
+  "PlantsvsZombies/Actor/unittest.py::test_graphics",
+  "PlantsvsZombies/Actor/unittest.py::test_is_blocked",
+  "PlantsvsZombies/Actor/unittest.py::test_is_blocked_wrong_type"
+]
